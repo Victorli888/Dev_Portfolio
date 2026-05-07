@@ -55,7 +55,7 @@ export default function ProjectToggle({ project, index, defaultOpen = false }: P
             </p>
           )}
           {project.summary && (
-            <p className="font-sans text-sm text-ink-faint mt-1 leading-snug">
+            <p className="font-sans text-sm text-ink-muted mt-1 leading-snug">
               {project.summary}
             </p>
           )}
@@ -63,9 +63,10 @@ export default function ProjectToggle({ project, index, defaultOpen = false }: P
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-out ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
       >
-        <div className="pl-[52px] pb-12">
+        <div className={`overflow-hidden transition-opacity duration-300 ease-out ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="pl-8 sm:pl-[52px] pb-12">
           <div className="h-px bg-border mb-8" />
 
           {project.links.length > 0 && (
@@ -84,9 +85,10 @@ export default function ProjectToggle({ project, index, defaultOpen = false }: P
             </div>
           )}
 
-          <div className="prose prose-stone max-w-none w-full prose-p:text-ink-muted prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-semibold prose-h2:text-xs prose-h2:tracking-widest prose-h2:uppercase prose-h2:text-ink-faint prose-h2:mt-10 prose-h2:mb-3 prose-h3:text-sm prose-h3:text-ink prose-h3:mt-6 prose-h3:mb-2 prose-h4:text-xs prose-h4:text-ink-muted prose-h4:uppercase prose-h4:tracking-wide prose-strong:text-ink prose-a:text-brand prose-a:no-underline hover:prose-a:underline">
+          <div className="prose prose-stone max-w-none w-full break-words prose-p:text-ink prose-p:leading-relaxed prose-p:text-base prose-li:text-ink prose-headings:font-sans prose-headings:font-semibold prose-h2:text-xs prose-h2:tracking-widest prose-h2:uppercase prose-h2:text-ink-muted prose-h2:mt-10 prose-h2:mb-3 prose-h3:text-sm prose-h3:text-ink prose-h3:mt-6 prose-h3:mb-2 prose-h4:text-xs prose-h4:text-ink-muted prose-h4:uppercase prose-h4:tracking-wide prose-strong:text-ink prose-a:text-brand prose-a:no-underline hover:prose-a:underline">
             <ReactMarkdown>{project.content}</ReactMarkdown>
           </div>
+        </div>
         </div>
       </div>
     </div>

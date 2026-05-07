@@ -65,7 +65,7 @@ export default function Hero({
     <section className="flex flex-col items-center gap-10 py-6">
       {/* Stone + caption as a self-contained unit */}
       <div className="flex flex-col items-center gap-3">
-        <div className="relative flex items-center justify-center w-[420px] h-[420px]">
+        <div className="relative flex items-center justify-center w-full max-w-[420px] aspect-square">
           <img
             src="/swe_evolution_stone.svg"
             aria-hidden="true"
@@ -130,7 +130,7 @@ export default function Hero({
             </div>
           </div>
         </div>
-        <p className="font-sans text-xs text-ink-faint text-center whitespace-pre-line w-[500px]">
+        <p className="font-sans text-xs text-ink-faint text-center whitespace-pre-line w-full max-w-[500px] px-4">
           {tagline}
         </p>
       </div>
