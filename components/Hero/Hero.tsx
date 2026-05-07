@@ -47,7 +47,7 @@ export default function Hero({
   title,
   tagline,
   githubUrl = 'https://github.com/Victorli888',
-  linkedinUrl = 'https://linkedin.com/in/victorli',
+  linkedinUrl = 'https://linkedin.com/in/victorli2',
 }: HeroProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [iconPos, setIconPos] = useState<{ x: number; y: number }>();

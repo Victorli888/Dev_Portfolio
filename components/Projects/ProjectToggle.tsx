@@ -66,7 +66,7 @@ export default function ProjectToggle({ project, index, defaultOpen = false }: P
         className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
       >
         <div className={`overflow-hidden transition-opacity duration-300 ease-out ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="pl-8 sm:pl-[52px] pb-12">
+        <div className="pl-16 pb-12">
           <div className="h-px bg-border mb-8" />
 
           {project.links.length > 0 && (

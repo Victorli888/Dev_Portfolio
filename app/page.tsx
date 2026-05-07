@@ -13,7 +13,7 @@ export default function HomePage() {
           title="Software Engineer"
           tagline={"Mechanical Engineering Student Turned Professional Software Engineer\nBuilt To Learn, Driven to Evolve"}
           githubUrl="https://github.com/Victorli888"
-          linkedinUrl="https://linkedin.com/in/victorli"
+          linkedinUrl="https://linkedin.com/in/victorli2"
         />
       </div>
       <div className="px-4 sm:px-6 lg:px-[10%]">
