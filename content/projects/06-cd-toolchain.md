@@ -27,8 +27,6 @@ The async refactor introduced non-trivial complexity around shared state. The or
 
 We chose not to parallelize everything. Some simulation stages have strict ordering dependencies. Over-parallelizing would have required introducing synchronization primitives throughout, trading one kind of complexity for another. The goal was to eliminate unnecessary blocking, not to maximize raw concurrency.
 
-The surface cleanup also carried organizational risk: removing modes someone considered "just in case" infrastructure. Getting team buy-in before cutting anything was slower than acting unilaterally, but it was the right call — it surfaced a few legitimate edge-case uses that would have been broken silently.
-
 ## Challenges + Debugging
 
 The hardest debugging session involved a class of intermittent failures in simulation output — results that were wrong but not obviously so. The culprit turned out to be a shared random number generator being accessed concurrently from multiple tasks. In the synchronous world this was invisible; under async execution, tasks were racing to read and advance the RNG state, producing non-deterministic output. The fix was to give each task its own seeded RNG instance rather than sharing one, but finding the root cause required adding deterministic replay logging to the simulation so we could isolate which task sequence produced the divergent output.

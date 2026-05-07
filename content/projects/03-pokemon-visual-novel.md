@@ -1,8 +1,8 @@
 ---
-title: "Pokemon Text Adventure"
+title: "Pokémon Visual Novel"
 origin: "Personal"
 slug: "pokemon-visual-novel"
-summary: "A browser-based Pokémon text adventure built with React — my first web project, built entirely through self-teaching outside of work."
+summary: "A browser-based Pokémon Visual Novel built with React — my first web project, built entirely through self-teaching outside of my normal job."
 stack: ["JavaScript", "React", "HTML", "CSS"]
 tags: ["personal", "react", "game", "self-taught", "beginner"]
 links:
@@ -14,13 +14,13 @@ links:
 
 After spending my professional time in C# and Unity, I wanted to understand the web development world from the ground up. I had been working through The Odin Project curriculum and needed a real project to apply what I was learning — something small enough to finish but complex enough to actually test the skills.
 
-A Pokémon text adventure was the right scope: it has branching narrative logic, stateful UI (player choices, battle state, a Pokémon party), and a clear enough domain that I wouldn't spend time figuring out what to build instead of how to build it.
+One of my first Python projects was a Pokémon text adventure, so the next stage was adding visuals and turning what I had into a visual-novel-esque game. The project has branching narrative logic, stateful UI (player choices, battle state, a Pokémon party), and a clear enough domain that I wouldn't spend time figuring out what to build instead of how to build it.
 
 ## Design Decisions
 
-**React for state-driven UI.** A text adventure is fundamentally a state machine — the current scene, the player's choices, the Pokémon on their team, battle outcomes. React's component model and state management mapped cleanly onto that structure. Each scene is a rendered state, and user decisions trigger state transitions. This made React a natural fit even as a beginner; the problem shape and the tool shape matched.
+**React for state-driven UI.** This app is fundamentally a state machine — the current scene, the player's choices, the Pokémon on their team, battle outcomes. React's component model and state management mapped cleanly onto that structure. Each scene is a rendered state, and user decisions trigger state transitions. This made React a natural fit even as a beginner; the problem shape and the tool shape matched.
 
-**Narrative-first structure.** The game opens at Professor Oak's Lab, where the player picks a starter Pokémon — Cyndaquil, Chikorita, or Totodile, each with distinct stats and traits. From there, the player moves through tall grass encounters, wild Pokémon battles, and branching decisions. The structure prioritizes the player's sense of agency: every fork in the story changes what happens next.
+**Narrative-first structure.** The game opens at Professor Oak's Lab, where the player picks a starter Pokémon — Charmander, Squirtle, or Bulbasaur, each with distinct stats and traits. From there, the player moves through tall grass encounters, wild Pokémon battles, and branching decisions. The structure prioritizes the player's sense of agency: every fork in the story changes what happens next.
 
 **No backend.** The entire game runs in the browser. Game state lives in React component state. There's no server, no database, no auth. For a first web project, eliminating the backend entirely was the right call — it let me focus entirely on learning JavaScript, React, and the DOM without splitting attention across a stack I hadn't touched yet.
 
