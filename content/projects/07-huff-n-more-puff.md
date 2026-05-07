@@ -23,7 +23,7 @@ This was my first project with full end-to-end ownership. No senior developer to
 
 ## Trade-offs
 
-Being the sole developer meant prioritizing ruthlessly. There was no bandwidth to build every feature the product team wanted in the first release. Early conversations with product management established a clear scope for the initial field build — base game, bonus, and jackpot — with more speculative features pushed to a potential follow-up. Getting a stable, certified game to field was the success criterion, not feature completeness.
+Because this project was a port, the trade-off wasn't deciding which features to invent; it was deciding implementation order. As the sole developer, I prioritized the highest-risk systems first so we could get stable builds into QA early and validate the Class 2 flow before polishing everything else. I worked closely with product to confirm the correct paytables were implemented and that payouts matched customer requirements, then sequenced remaining work behind that baseline. The success criterion was getting a stable, certifiable build into field testing as early as possible.
 
 Cross-team communication also required time that would otherwise go into code. As the main point of contact for art, QA, and product, I was the integration layer between disciplines that didn't always speak the same language. That was non-negotiable — no one else could resolve an art asset spec question or a QA repro ambiguity at the technical level — but it meant context-switching constantly during development.
 
