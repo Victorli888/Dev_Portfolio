@@ -1,5 +1,6 @@
 ---
 title: "HuffNMorePuff Class 2"
+origin: "Light & Wonder"
 slug: "huff-n-more-puff-class-2"
 summary: "Solo-developed a Class 2 slot game inspired by the Three Little Pigs — owning the full product lifecycle from Class 3 conversion to math generation to field deployment."
 stack: ["C#", "Unity"]

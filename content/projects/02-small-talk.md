@@ -1,9 +1,15 @@
 ---
 title: "Small Talk"
+origin: "Personal"
 slug: "small-talk"
 summary: "An AI-powered Cantonese practice tool that teaches colloquial speech and local idioms — built to help me speak more deeply with my parents."
 stack: ["TypeScript", "Deno", "Deno Fresh", "Preact", "Claude API"]
 tags: ["personal", "ai", "language", "cantonese", "claude", "deno"]
+links:
+  - label: Live Demo
+    url: https://small-talk.viktory.deno.net/
+  - label: GitHub
+    url: https://github.com/Victorli888/small-talk
 ---
 
 ## Problem

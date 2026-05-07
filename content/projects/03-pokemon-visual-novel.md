@@ -1,9 +1,13 @@
 ---
-title: "Pokémon Text Adventure"
+title: "Pokemon Text Adventure"
+origin: "Personal"
 slug: "pokemon-visual-novel"
 summary: "A browser-based Pokémon text adventure built with React — my first web project, built entirely through self-teaching outside of work."
 stack: ["JavaScript", "React", "HTML", "CSS"]
 tags: ["personal", "react", "game", "self-taught", "beginner"]
+links:
+  - label: Live Demo
+    url: https://victorli.dev/Pokemon_WebApp/
 ---
 
 ## Problem

@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code (local settings, skills, memory)
+.claude/
+
+# content snapshots / reference copies
+content/chance-portfolio-content/
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo

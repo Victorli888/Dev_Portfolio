@@ -1,5 +1,6 @@
 ---
-title: "Chat Bot at Jampack"
+title: "Hybrid AI Chat Bot"
+origin: "Games For Love"
 slug: "chat-bot-jampack"
 summary: "Built a budget-aware AI chatbot for a children's hospital gaming non-profit — using a question-mapping layer to minimize API calls and keep costs sustainable for an organization with no room for waste."
 stack: ["PHP", "WordPress", "Bricks UI"]

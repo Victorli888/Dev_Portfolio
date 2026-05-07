@@ -1,8 +1,9 @@
 ---
-title: "Titan SaaS (Hyperion)"
+title: "Titan SaaS"
+origin: "Light & Wonder"
 slug: "titan-saas"
 summary: "Built a Class 2 gaming middleware platform from scratch — REST API, WPF Bingo UI, RNG, and progressive broadcasting — after being handed a fullstack engineering role with only a game dev background."
-stack: ["C#", "ASP.NET Core", "WPF", "Protobuf", "NUnit", "Moq", "GitHub Actions", "Docker", "Swagger"]
+stack: ["C#", "ASP.NET Core", "WPF", "Docker"]
 tags: ["saas", "gaming", "middleware", "api", "dotnet", "fullstack"]
 ---
 
@@ -23,6 +24,8 @@ The added constraint: I was handed this project as a game developer. My backgrou
 **Protobuf for inter-process communication.** The Bingo UI runs as a separate WPF process and communicates with the Hyperion backend over a dedicated TCP port using Protocol Buffers. This mirrors the messaging pattern already used in Platform Services and CDS, keeps the message format compact, and keeps the UI process decoupled from direct business logic.
 
 **Per-EGM deployment as a standalone Windows executable.** Rather than centralizing Hyperion on a single server, each EGM runs its own instance. This eliminates a single point of failure across a property's floor, matches how the existing MK2/Titan EGMs operated, and makes the deployment model simple — standard Windows executable management, no cluster orchestration required.
+
+The Windows executable is the current shipping form. The planned next step is containerizing Hyperion as a Docker image, which would make the service OS-agnostic and open the door to deploying on Linux-based EGM hardware — removing the Windows dependency without changing the service contract for any EGM client.
 
 **Existing Titan RNG.** Rather than building a new random number generator, Hyperion integrates the existing Titan RNG engine. Class 2 regulations require a CD-approved RNG, and Titan was already approved. Using it directly avoided a costly re-certification process.
 

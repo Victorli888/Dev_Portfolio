@@ -1,9 +1,13 @@
 ---
 title: "Travel Tao"
+origin: "Personal"
 slug: "travel-tao"
 summary: "A personal AI travel planning assistant powered by Claude — built to eliminate doom-scrolling, centralize trip research, and adapt plans dynamically when better options surface."
 stack: ["TypeScript", "React", "Tailwind CSS", "Neon Postgres", "Claude API"]
 tags: ["personal", "ai", "travel", "fullstack", "claude", "postgres"]
+links:
+  - label: GitHub
+    url: https://github.com/Victorli888/travel-dao
 ---
 
 ## Problem

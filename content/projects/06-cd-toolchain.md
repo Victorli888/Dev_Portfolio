@@ -1,5 +1,6 @@
 ---
-title: "CDToolchain Streamline Overhaul"
+title: "CDToolchain Math Sim Overhaul"
+origin: "Light & Wonder"
 slug: "cd-toolchain-streamline-overhaul"
 summary: "Re-architected a .NET math generation engine with async processing, cutting simulation time from weeks to days."
 stack: ["C#", ".NET Framework", "WPF"]
@@ -18,7 +19,7 @@ The core decision was to separate the overhaul into two distinct efforts: **surf
 
 For surface cleanup, I audited usage across the SDK and interviewed team members to map which functions and modes were actively relied on versus legacy dead weight. Unused modes were removed rather than deprecated-in-place — deprecation notices tend to linger forever; hard removal forces the conversation. The consolidated toolset was reorganized around actual team workflows instead of how the original authors had thought about the problem.
 
-For the pipeline, I introduced `async`/`await` throughout the simulation task flow using .NET's Task Parallel Library. Long-running simulation stages that had been sequential were identified, decoupled, and re-expressed as awaitable tasks. The WPF frontend was updated to keep the UI responsive during runs, surfacing progress state instead of appearing frozen.
+For the pipeline, the re-architecture enabled parallel simulations across all bets and percentages — allowing automatic flow between each simulation stage, making it possible to run the entire process in a single operation. That meant a developer could kick off a full simulation run in the background during the workday or before leaving the office, and come back to completed results rather than scheduling it as a multi-day overnight job. Less waiting, more building.
 
 ## Trade-offs
 
@@ -32,7 +33,6 @@ The surface cleanup also carried organizational risk: removing modes someone con
 
 The hardest debugging session involved a class of intermittent failures in simulation output — results that were wrong but not obviously so. The culprit turned out to be a shared random number generator being accessed concurrently from multiple tasks. In the synchronous world this was invisible; under async execution, tasks were racing to read and advance the RNG state, producing non-deterministic output. The fix was to give each task its own seeded RNG instance rather than sharing one, but finding the root cause required adding deterministic replay logging to the simulation so we could isolate which task sequence produced the divergent output.
 
-A secondary challenge was the WPF threading model. WPF requires UI updates to happen on the dispatcher thread, but the simulation tasks ran on thread pool threads. Early in the refactor, progress updates were silently swallowed or crashed the app. Wrapping dispatcher marshaling into a consistent progress-reporting abstraction solved it cleanly and made future UI work simpler.
 
 ## Impact
 
